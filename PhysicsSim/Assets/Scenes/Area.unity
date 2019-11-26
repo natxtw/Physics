@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1229665372}
   - component: {fileID: 1229665371}
   - component: {fileID: 1229665370}
+  - component: {fileID: 1229665373}
   m_Layer: 0
   m_Name: Ball1
   m_TagString: Untagged
@@ -186,7 +187,20 @@ MonoBehaviour:
   BallVelocity: {x: 0, y: 0, z: 0}
   BallForce: {x: 0, y: 0, z: 0}
   BallMomentum: {x: 0, y: 0, z: 0}
+  P1: {x: 0, y: 0, z: 0}
   BallMass: 1
+--- !u!114 &1229665373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229665369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49caa4f6b6e10224188b0c1f41bb800a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1229665374
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -433,6 +447,7 @@ GameObject:
   - component: {fileID: 1690461461}
   - component: {fileID: 1690461460}
   - component: {fileID: 1690461459}
+  - component: {fileID: 1690461464}
   m_Layer: 0
   m_Name: Ball2
   m_TagString: Untagged
@@ -528,6 +543,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690461464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690461458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bca61e05b31fb9438f9f7812c8d58ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BallAcceleration: {x: 0, y: 0, z: 0}
+  BallVelocity: {x: 0, y: 0, z: 0}
+  BallForce: {x: 0, y: 0, z: 0}
+  BallMomentum: {x: 0, y: 0, z: 0}
+  P1: {x: 0, y: 0, z: 0}
+  BallMass: 1
 --- !u!1 &1862432992
 GameObject:
   m_ObjectHideFlags: 0
