@@ -13,11 +13,11 @@ public class TriggerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown("e"))
         {
-            BallScript.BallForce = new Vector3(1000, 0, 0);
+            BallScript.AddForce = new Vector3(10, 0, 0);
             Debug.Log("I worked");
         }
     }

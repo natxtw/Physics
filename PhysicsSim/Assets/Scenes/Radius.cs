@@ -17,7 +17,7 @@ public class Radius : MonoBehaviour
     private void OnDrawGizmosSelected() //draws around objects
     {
         ObjCentrePoint = ObjRender.bounds.center; //finds the center of the object
-        ObjRadius = ObjRender.bounds.extents.magnitude; //uses the mesh render to find the object bounds
+        ObjRadius = ObjRender.bounds.extents.magnitude / 2; //uses the mesh render to find the object bounds
         Gizmos.color = Color.green; //changes colour
         Gizmos.DrawWireSphere(ObjCentrePoint, ObjRadius); //draws the frame
     }

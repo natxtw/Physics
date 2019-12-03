@@ -9,6 +9,8 @@ public class CollisionForBall : MonoBehaviour
 
     private Ball BallScript;
 
+    Vector3 Impulse;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,11 @@ public class CollisionForBall : MonoBehaviour
         Ball1 = GameObject.Find("Ball1"); 
         Ball2 = GameObject.Find("Ball2");
 
-        //Gets the script
-        BallScript = GetComponent<Ball>();
+        BallScript = GetComponent<Ball>(); //Gets the script
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() //FixedUpdate() can run more frequent runs and is more suitable for physics over the standard Update()
     {
         Colliding();
     }
@@ -32,10 +33,21 @@ public class CollisionForBall : MonoBehaviour
         if (distance < Ball1.GetComponent<Radius>().ObjRadius + Ball2.GetComponent<Radius>().ObjRadius) //Grabs the radius script for each ball and their radius
         {
             Debug.Log("The Balls Are Colliding"); //Colider message
+            ImpulseCalc(Ball1.GetComponent<Ball>().BallMass, Ball1.GetComponent<Ball>().Direction);
+            Ball1.GetComponent<Ball>().ImpulseCol(Impulse);
+            Ball2.GetComponent<Ball>().ImpulseCol(-Impulse);
         }
         //Debug.Log(Ball1.transform.position); //Displays the ball1's current position
 
-        //P1 = Ball 1 Mass * (Ball 1 Velocity after - Ball 1 BallVelocity) = -Ball 2 Mass (Ball 2 velocity after - Ball 2 velocity) 
+        
+    }
+
+    void ImpulseCalc(float _mass, Vector3 _Direction)
+    {
+        Vector3 VelocityTemp = Vector3.Dot(Ball1.GetComponent<Ball>().BallVelocity, _Direction) * _Direction;
+        Impulse = -VelocityTemp * (1 + 1) * ((Ball2.GetComponent<Ball>().BallMass * _mass) / (Ball2.GetComponent<Ball>().BallMass + _mass)); //P1 = Ball 1 Mass * (Ball 1 Velocity after - Ball 1 BallVelocity) = -Ball 2 Mass (Ball 2 velocity after - Ball 2 velocity) 
+
+
     }
 
 }
